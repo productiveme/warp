@@ -36,6 +36,12 @@ def init(app):
     Book.bind(DB)
     Assign.bind(DB)
 
+    import os
+    fn = playhouse.db_url.parse(connStr)['database']
+    if not os.path.isfile(fn):
+        with app.app_context():
+            initDB(True)
+
     app.before_request(_connect)
     app.teardown_request(_disconnect)
 

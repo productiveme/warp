@@ -1,0 +1,6 @@
+flask
+jsonschema
+xlsxwriter
+peewee
+gunicorn
+

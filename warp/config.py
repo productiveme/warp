@@ -1,5 +1,5 @@
 
-DATABASE = "sqlite:///warp/db.sqlite"
+DATABASE = "sqlite:////tmp/db.sqlite"
 DATABASE_ARGS = {"pragmas": {"foreign_keys": "ON"}}
 #DATABASE = "postgresql://warp@localhost:5432/warp"
 

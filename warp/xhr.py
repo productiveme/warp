@@ -479,6 +479,8 @@ def editUser():
     except ValidationError as err:
         return {"msg": "Data error" }, 400
 
+    return {"msg": "Functionality disabled in demo" }, 400
+
     class WarpErr(Exception):
         pass
 
