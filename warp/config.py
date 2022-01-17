@@ -1,3 +1,4 @@
+import os
 
 DATABASE = "sqlite:///warp/db.sqlite"
 DATABASE_ARGS = {"pragmas": {"foreign_keys": "ON"}}
@@ -7,7 +8,7 @@ DATABASE_INIT_SCRIPT = "sql/schema_sqlite.sql"
 #DATABASE_INIT_SCRIPT = "sql/schema_postgres.sql"
 DATABASE_SAMPLEDATA_SCRIPT = "sql/sample_data.sql"
 
-SECRET_KEY = b'change_me'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # use mellon (Apache SAML module) for authentication
 #AUTH_MELLON = False

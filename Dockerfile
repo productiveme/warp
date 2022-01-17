@@ -1,5 +1,7 @@
 FROM python:3-slim
 
+ARG FLASK_SECRET_KEY
+
 WORKDIR /usr/src/app
 
 RUN pip install --upgrade setuptools
@@ -14,6 +16,7 @@ RUN python setup.py install
 WORKDIR /usr/src/app/build/lib
 
 ENV FLASK_APP=warp
+ENV SECRET_KEY=$FLASK_SECRET_KEY
 
 EXPOSE 5000/tcp
 
