@@ -78,7 +78,7 @@ $ FLASK_APP=warp flask run
 For testing purposes you can use provided Dockerfile. The following command will build your image:
 
 ```
-docker build -f Dockerfile -t warp:latest .
+export FLASK_SECRET_KEY=$(openssl rand -hex 16 | sed 's/\(..\)/\\x\1/g'); docker build --build-arg FLASK_SECRET_KEY -f Dockerfile -t warp:latest .
 ```
 
 And that one will run it:
