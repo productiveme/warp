@@ -20,5 +20,6 @@ ENV SECRET_KEY=$FLASK_SECRET_KEY
 
 EXPOSE 5000/tcp
 
-RUN ["python", "-m", "flask", "init-db", "-s"]
+# Uncomment below to set up empty db the first time
+# RUN ["python", "-m", "flask", "init-db", "-s"]
 ENTRYPOINT ["python", "-m", "flask", "run", "-h", "0.0.0.0"]

@@ -21,7 +21,7 @@ DAY_LEN = (24*3600 / SLOT)
 
 #DATABASE = "postgresql://warp@localhost:5432/warp"
 #DATABASE_ARGS = {}
-DATABASE = "sqlite:///../warp/db.sqlite"
+DATABASE = "sqlite:///../../../data/db.sqlite"
 DATABASE_ARGS = {"pragmas": {"foreign_keys": "ON"}}
 
 DB = playhouse.db_url.connect(DATABASE, autoconnect=False, thread_safe=True, **DATABASE_ARGS)

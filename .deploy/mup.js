@@ -23,6 +23,10 @@ module.exports = {
       SECRET_KEY: process.env.SECRET_KEY,
     },
 
+    volumes: {
+      "warp-data": "/usr/src/app/data",
+    },
+
     docker: {
       imagePort: 5000,
     },
