@@ -12,6 +12,7 @@ COPY setup.py ./
 COPY MANIFEST.in ./
 COPY LICENSE ./
 RUN python setup.py install
+RUN apt update && apt install -y sqlite3
 
 WORKDIR /usr/src/app/build/lib
 
