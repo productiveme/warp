@@ -214,8 +214,8 @@ function initUsers(userData) {
                         resp.map((e) => [ e.login, {name: e.name, role: e.role} ]
                     )));
 
-                // as the last step we reinitialize actAs field
-                initActAs(userData);
+                // as the last step we reinitialize actAs field for managers and up
+                if (window.warpGlobals.isM) initActAs(userData);
 
                 M.toast({html: 'Action successfull.'});
                 editModal.close();    

@@ -343,10 +343,13 @@ def getUsers():
     real_uid = flask.session.get('real-uid')
     role = flask.session.get('role')
 
-    if role > auth.ROLE_MANAGER:
+    if role > auth.ROLE_USER:
         flask.abort(403)
 
-    usersCursor = Users.select()
+    if role == auth.ROLE_USER:
+        usersCursor = Users.select().where(Users.id == uid)
+    else:
+        usersCursor = Users.select()
 
     res = {
         "data": {},
@@ -424,10 +427,20 @@ def editUser():
 
     role = flask.session.get('role')
 
-    if role > auth.ROLE_MANAGER:
+    if role > auth.ROLE_USER:
         flask.abort(403)
 
     action_data = flask.request.get_json()
+    
+    if role == auth.ROLE_USER:
+        q = Users.select(Users.role).where((Users.id == flask.session.get('uid')) \
+            & (Users.login == action_data['login']))
+        # Can only update own record
+        if len(q) == 0:
+            flask.abort(404)
+        # Cannot elevate own role
+        if action_data['role'] < q[0]['role']:
+            flask.abort(404)
 
     schema = {
         "$schema": "https://json-schema.org/draft/2020-12/schema",

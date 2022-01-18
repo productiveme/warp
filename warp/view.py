@@ -39,6 +39,7 @@ def headerDataInit():
     return { "headerDataL": headerDataL,
              "headerDataR": headerDataR,
              "isManager": flask.session.get('role') <= auth.ROLE_MANAGER,
+             "isUser": flask.session.get('role') == auth.ROLE_USER,
              "isViewer": flask.session.get('role') >= auth.ROLE_VIEVER,
              'hasLogout': 'auth.logout' in flask.current_app.view_functions
     }
@@ -68,7 +69,7 @@ def users():
 
     role = flask.session.get('role')
 
-    if role > auth.ROLE_MANAGER:
+    if role > auth.ROLE_USER:
         flask.abort(403)
 
     return flask.render_template('users.html')

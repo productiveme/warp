@@ -12,6 +12,12 @@
     <script type="text/javascript" src="{{ url_for('static', filename='userdata.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='actas.js') }}"></script>
     {% endif %}
+    {% if isUser %}
+    <script>
+        window.warpGlobals.URLs['getUsers'] = "{{ url_for('xhr.getUsers')}}";
+    </script> 
+    <script type="text/javascript" src="{{ url_for('static', filename='userdata.js') }}"></script>
+    {% endif %}
     {% if isViewer %}
     <script>
         window.warpGlobals.isV = true;
@@ -38,6 +44,10 @@
         {% for i in headerDataR %}
         <li {{ 'class="active"'|safe if i['active'] }}><a href="{{i['url']}}">{{i['text']}}</a></li>
         {% endfor %}
+        {% endif %}
+        {% if isUser %}
+        <li class="divider"></li>
+        <li><a href="/users">My User</a></li>
         {% endif %}
         {% if hasLogout %}
         <li class="divider"></li>
@@ -75,6 +85,11 @@
                         <label for="act-as1" class="active">Book as</label>
                     </div>    
                 </li>
+            </ul>
+            {% endif %}
+            {% if isUser %}
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/users">My User</a></li>
             </ul>
             {% endif %}
 
