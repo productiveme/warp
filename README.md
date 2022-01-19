@@ -78,13 +78,25 @@ $ FLASK_APP=warp flask run
 For testing purposes you can use provided Dockerfile. The following command will build your image:
 
 ```
-export FLASK_SECRET_KEY=$(openssl rand -hex 16 | sed 's/\(..\)/\\x\1/g'); docker build --build-arg FLASK_SECRET_KEY -f Dockerfile -t warp:latest .
+export FLASK_SECRET_KEY=secret; docker build --build-arg FLASK_SECRET_KEY -f Dockerfile -t warp:latest .
+```
+
+NOTE: For production replace `secret` with `$(openssl rand -hex 16 | sed 's/\(..\)/\\x\1/g')`
+
+Create a persistent volume to house the database
+```
+docker create volume warp-data
 ```
 
 And that one will run it:
 
 ```
-docker run -d -p 5000:5000 --name warp warp:latest
+docker run -d -p 5000:5000 --name warp -v warp-data:/usr/src/app/data warp:latest
+```
+
+If the warp-data doesn't contain a database yet (first run), remember to initialize it
+```
+docker exec -it warp sh -c "python -m flask init-db -s"
 ```
 
 ## Production environment

@@ -6,6 +6,7 @@ HTML, BODY {
 
 NAV {
     z-index: 5;
+    background-color: #38341f !important;
 }
 
 .nav-wrapper DIV,A {

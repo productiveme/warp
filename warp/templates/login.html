@@ -26,13 +26,19 @@
 
     <nav>
         <div class="nav-wrapper">
-            <div class="center"><img class="logo" src="{{ url_for('static', filename='logo.png') }}"  alt="Workspace Autonomouse Reservation Program"></div>
+            <div class="center"><img class="logo" src="{{ url_for('static', filename='logo.svg') }}"  alt="Workspace Autonomouse Reservation Program"></div>
         </div>
     </nav>
 
     <form action="{{ url_for('auth.login') }}" method="post">
 
     <div class="login_container valign-wrapper">
+      <div class="row center-align ">
+
+        <div class="col s12">
+          Workspace Reservation - Cape Town Office
+        </div>
+      <div>
       <div class="row center-align ">
 
         <div class="col s12">
