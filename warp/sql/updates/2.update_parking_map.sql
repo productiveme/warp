@@ -1,3 +1,6 @@
+DELETE from seat WHERE id=37;
+DELETE from seat WHERE id=38;
+
 UPDATE seat SET zid=2, Name='P2 - 021', x=217,y=13 where id=20+ 1;
 UPDATE seat SET zid=2, Name='P2 - 035', x=217,y=69 where id=20+ 2;
 UPDATE seat SET zid=2, Name='P2 - 037', x=217,y=125 where id=20+3;

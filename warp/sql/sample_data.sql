@@ -26,7 +26,7 @@ INSERT INTO users VALUES (24,'nudixon','pbkdf2:sha256:260000$UEV4fnkO1Mtr5EBq$f9
 INSERT INTO users VALUES (25,'stakurpersad','pbkdf2:sha256:260000$UEV4fnkO1Mtr5EBq$f95fac5c5b26e9f4b963d77de76d2706f38a86e609924ce4cbe43409af695be0','Takurpersad, Shalla',2);
 INSERT INTO users VALUES (26,'jlaubscher','pbkdf2:sha256:260000$UEV4fnkO1Mtr5EBq$f95fac5c5b26e9f4b963d77de76d2706f38a86e609924ce4cbe43409af695be0','Laubscher, Justin',2);
 
-INSERT INTO zone VALUES (1,1,'Office','zone_maps/office.png');
+INSERT INTO zone VALUES (1,1,'Desk','zone_maps/office.png');
 INSERT INTO zone VALUES (2,2,'Parking','zone_maps/parking.png');
 
 INSERT INTO seat (zid,name,x,y) VALUES (1,'Desk 1' ,169,25);
