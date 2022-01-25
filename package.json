@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "dev": "npx dotenv-cli -e .deploy/.env -- bash -c \"docker stop warp; docker rm warp; docker build --build-arg FLASK_SECRET_KEY -f Dockerfile -t warp:latest . && docker run -d -p 5000:5000 --name warp -v warp-data:/usr/src/app/data warp:latest\" && echo 'Running on http://127.0.0.1:5000'"
+    "dev": "npx dotenv-cli -e .deploy/.env -- bash -c \"docker stop warp; docker rm warp; docker build --build-arg FLASK_SECRET_KEY -f Dockerfile -t warp:latest . && docker run -d -p 5000:5000 --name warp -v warp-data:/usr/src/app/data warp:latest\"; sleep 10; docker logs warp"
   },
   "repository": {
     "type": "git",
