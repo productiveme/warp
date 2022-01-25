@@ -12,3 +12,5 @@ bin/
 .deploy/gumtree.pem
 .deploy/.env
 node_modules/
+res/AutoSave*
+*~.skp
