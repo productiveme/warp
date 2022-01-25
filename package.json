@@ -1,0 +1,23 @@
+{
+  "name": "warp",
+  "version": "1.0.0",
+  "description": "The story of this project begins when, due to COVID-19, we have converted our regular office into a hybrid of regular and hot-desk assignments. We needed to find a solution for desks reservations, transparency of that, and detailed logging of who were in the office for epidemic purposes.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "npx dotenv-cli -e .deploy/.env -- bash -c \"docker stop warp; docker rm warp; docker build --build-arg FLASK_SECRET_KEY -f Dockerfile -t warp:latest . && docker run -d -p 5000:5000 --name warp -v warp-data:/usr/src/app/data warp:latest\" && echo 'Running on http://127.0.0.1:5000'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/productiveme/warp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/productiveme/warp/issues"
+  },
+  "homepage": "https://github.com/productiveme/warp#readme"
+}

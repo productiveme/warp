@@ -99,6 +99,14 @@ If the warp-data doesn't contain a database yet (first run), remember to initial
 docker exec -it warp sh -c "python -m flask init-db -s"
 ```
 
+For convenience on local machine you can run `npm run dev` which will stop and remove the current container and build and start a new one.
+
+To access the database, you can `docker exec -it warp sh` and then 
+```
+sqlite3
+.open ../../data/db.sqlite
+```
+
 ## Production environment
 
 ### SECRET_KEY
