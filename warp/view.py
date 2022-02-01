@@ -98,7 +98,7 @@ def zone(zid):
         "slider": [9*3600, 17*3600]
     }
 
-    for d in nextWeek[1:]:
+    for d in nextWeek[0:]:
         if not d['isWeekend']:
             defaultSelectedDates['cb'] = [d['timestamp']]
             break

@@ -38,6 +38,7 @@ def login():
             if role >= ROLE_BLOCKED:
                 flask.flash("Your account is blocked.")
             else:
+                flask.session.permanent = True
                 flask.session['uid'] = c[0]['id']
                 flask.session['role'] = c[0]['role']
                 flask.session['login_time'] = utils.now()
