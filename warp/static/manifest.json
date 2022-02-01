@@ -1,0 +1,11 @@
+{ 
+  "name": "Gumtree Cape Town Workspace Bookings", 
+  "short_name": "Workspace Bookings", 
+  "start_url": "https://ctoffice.gumtree.co.za", 
+  "display": "standalone", 
+  "icons": [{ 
+    "src": "favicon.png", 
+    "sizes": "72x72", 
+    "type": "image/png" 
+  }] 
+}
