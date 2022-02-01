@@ -12,3 +12,7 @@ bin/
 .deploy/gumtree.pem
 .deploy/.env
 node_modules/
+res/AutoSave*
+*~.skp
+res/AutoSave_sketchup-office.skp
+res/AutoSave_sketchup-office.skp
