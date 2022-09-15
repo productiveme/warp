@@ -11,9 +11,9 @@ RUN \
     NODE_URL="https://nodejs.org/dist/v${NODE_VER}/node-v${NODE_VER}-linux-${NODE_ARCH}.tar.gz" && \
     wget -O - "$NODE_URL" | tar -xz --strip-components=1 -C /usr/
 
-RUN apt-get install -y build-essential libpq-dev libpcre3 libpcre3-dev
+RUN apt-get install -y build-essential libpq-dev libpcre3 libpcre3-dev python-dev
 RUN pip install --upgrade setuptools && pip install wheel uwsgi
-RUN pip wheel -w wheel/ uwsgi
+RUN pip wheel -w wheel/uwsgi
 
 WORKDIR /opt/warp/js/
 # fist we install webpack dependencies as it takes the longest time
