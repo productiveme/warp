@@ -12,6 +12,7 @@ RUN \
     wget -O - "$NODE_URL" | tar -xz --strip-components=1 -C /usr/
 
 RUN apt-get install -y build-essential libpq-dev libpcre3 libpcre3-dev python3-all-dev
+RUN pip install Cmake
 RUN pip install --upgrade setuptools && pip install wheel uwsgi
 RUN pip wheel -w wheel/ uwsgi
 
