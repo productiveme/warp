@@ -55,4 +55,3 @@ COPY res/warp_uwsgi.ini .
 
 EXPOSE 8000/tcp
 ENTRYPOINT ["uwsgi", "warp_uwsgi.ini"]
-
