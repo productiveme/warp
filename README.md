@@ -132,6 +132,24 @@ For the production envirnoment, I recommend running Nginx and PostgreSQL on sepa
 
 Each configuration parameter (check config.py) can be passed via the envirnoment as `WARP_varname`.
 
+#### Caprover Nginx config changes
+
+Remove the `http://` part from the $upstream e.g
+
+```
+# set $upstream http://<%-s.localDomain%>:<%-s.containerHttpPort%>;
+set $upstream <%-s.localDomain%>:<%-s.containerHttpPort%>;
+```
+
+Instead of using `proxy_pass`, replace with `uwsgi_pass` and include the uwsgi params:
+
+```
+# proxy_pass $upstream;
+
+uwsgi_pass $upstream;
+include /etc/nginx/uwsgi_params;
+```
+
 ### SECRET_KEY
 
 For the production environment, **make sure** that you have generated `SECRET_KEY` used for signing cookies. It is defined in `config.py.`
