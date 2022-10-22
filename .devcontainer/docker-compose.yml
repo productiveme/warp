@@ -18,6 +18,9 @@ services:
 
     environment:
       WARP_DATABASE: postgresql://postgres:postgres@db:5432/postgres
+      WARP_DATABASE_INIT_SCRIPT: '["sql/schema.sql","sql/sample_data.sql"]'
+      FLASK_ENV: development
+      FLASK_APP: warp
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity

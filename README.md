@@ -44,12 +44,18 @@ Default admin credentials are: `admin:noneshallpass`
 
 The preferred way to deploy is to run it via Docker. You need a working docker, and I won't cover it here.
 
+### with vscode devcontainer
+
+Open the project in the provided devcontainer
+
+$ flask run
+
 ### docker compose
 
 From the command line:
 ```
 # clone the repository
-$ git clone https://github.com/sebo-b/warp.git
+$ git clone https://github.com/productiveme/warp.git
 $ cd warp
 
 $ docker compose -f demo_compose.yaml up
@@ -62,7 +68,7 @@ After that, open http://127.0.0.1:8080 in your browser and log in as `admin` wit
 From the command line:
 ```
 # clone the repository
-$ git clone https://github.com/sebo-b/warp.git
+$ git clone https://github.com/productiveme/warp.git
 $ cd warp
 
 # build docker image (you can skip hash if you don't want to track it)
@@ -97,7 +103,7 @@ From the command line:
 
 ```
 # clone repo
-$ git clone https://github.com/sebo-b/warp.git
+$ git clone https://github.com/productiveme/warp.git
 $ cd warp
 
 # create virtual envirnoment and activate it
@@ -121,7 +127,7 @@ $ export FLASK_ENV=development
 $ export WARP_DATABASE=postgresql://warp:warp@localhost:5432/warp
 
 # run the app
-$ flash run
+$ flask run
 ```
 
 After that, open http://127.0.0.1:5000 in your browser and log in as `admin` with password `noneshallpass`.
