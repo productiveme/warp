@@ -1,4 +1,4 @@
-FROM python:3.9-slim AS compile-image
+FROM python:3.8-slim AS compile-image
 
 ENV NODE_VER=16.3.0
 
